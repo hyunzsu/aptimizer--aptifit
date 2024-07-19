@@ -1,2 +1,23 @@
 .ResultPage {
+  padding: var(--spacing-64) 0;
 }
+
+/* .buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  cursor: pointer;
+  font-size: var(--text-18);
+  font-weight: var(--font-700);
+  background-color: var(--secondary);
+  padding: var(--spacing-16) var(--spacing-24);
+  transition: all 200ms ease-in-out;
+  border-radius: var(--border-8);
+}
+
+.button:hover {
+  background-color: var(--primary);
+  color: var(--white);
+} */
