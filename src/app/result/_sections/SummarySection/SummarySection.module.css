@@ -17,3 +17,9 @@
 .cardContainer div {
   flex: 1 1 calc(50% - 16px);
 }
+
+@media (max-width: 425px) {
+  .cardContainer {
+    flex-direction: column;
+  }
+}
