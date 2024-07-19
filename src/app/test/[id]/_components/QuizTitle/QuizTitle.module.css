@@ -22,3 +22,15 @@
   font-size: var(--text-24);
   font-weight: var(--font-700);
 }
+
+/* 반응형 */
+@media (max-width: 425px) {
+  .category {
+    font-size: var(--text-18);
+  }
+
+  .title {
+    font-size: var(--text-18);
+    line-height: 2.7rem;
+  }
+}
