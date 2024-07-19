@@ -17,7 +17,8 @@ const RegisterPage = () => {
   // 폼 제출
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+
+    sessionStorage.setItem("user", JSON.stringify(formData));
 
     router.push("/information");
   };
