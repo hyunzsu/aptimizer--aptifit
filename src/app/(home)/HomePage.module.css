@@ -30,6 +30,12 @@
   margin-bottom: var(--spacing-32);
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-32);
+}
+
 /* 반응형 */
 @media (max-width: 425px) {
   .title {
@@ -43,7 +49,7 @@
     line-height: 2.4rem;
   }
 
-  .lineBreak {
-    display: block;
+  .buttonContainer {
+    gap: var(--spacing-16);
   }
 }
