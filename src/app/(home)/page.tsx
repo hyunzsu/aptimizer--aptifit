@@ -5,11 +5,6 @@ import { CircleAnimation } from "./_components";
 import s from "./HomePage.module.css";
 
 const HomePage = () => {
-  // 결과지로 바로 이동
-  const handleClick = () => {
-    console.log("click");
-  };
-
   return (
     <main className={s.HomePage}>
       {/* 1. 제목 */}
@@ -18,7 +13,7 @@ const HomePage = () => {
         <p className={s.subtitle}>너의 전공을 찾아봐</p>
         <div className={s.buttonContainer}>
           <LinkButton href="/information" label="시작하기" />
-          <Button onClick={handleClick}>결과 확인</Button>
+          <LinkButton href="/login" label="결과확인" />
         </div>
       </div>
 
