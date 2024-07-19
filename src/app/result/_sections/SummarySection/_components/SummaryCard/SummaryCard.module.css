@@ -1,0 +1,32 @@
+.SummaryCard {
+  min-height: 18rem;
+  padding: 24px 16px;
+  border-radius: 10px;
+}
+
+.definition {
+  background-color: #d2d9ea;
+}
+
+.ideal {
+  background-color: #ead2d2;
+}
+
+.courses {
+  background-color: #d2ead4;
+}
+
+.specifics {
+  background-color: #e4d2ea;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 24px;
+}

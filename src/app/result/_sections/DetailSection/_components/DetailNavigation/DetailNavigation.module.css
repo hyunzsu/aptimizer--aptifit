@@ -1,0 +1,37 @@
+.DetailNavigation {
+  display: flex;
+}
+
+.li {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 110px;
+  height: 40px;
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.capability {
+  background-color: #798ec1;
+}
+
+.value {
+  background-color: #79c189;
+}
+
+.knowledge {
+  background-color: #b779c1;
+}
+
+.interest {
+  background-color: #c1797d;
+}
+
+.characteristics {
+  background-color: #c19c79;
+}

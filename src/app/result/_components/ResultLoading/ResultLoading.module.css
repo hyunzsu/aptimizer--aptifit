@@ -1,0 +1,59 @@
+.ResultLoading {
+  background-color: var(--primary);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 64px;
+}
+
+.finishContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingbarContainer {
+  display: flex;
+  min-width: 800px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.loadingbarOuter {
+  height: 10px;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  margin-right: 8px;
+}
+
+.loadingbarInner {
+  height: 10px;
+  background-color: #798ec1;
+  transition: all 300ms ease-in-out;
+  border-radius: 20px;
+}
+
+.percentage {
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+}
+
+.description {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+}

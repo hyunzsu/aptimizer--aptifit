@@ -1,0 +1,24 @@
+.QuizTitle {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.icon {
+  margin-right: var(--spacing-8);
+}
+
+.category {
+  font-size: var(--text-20);
+  font-weight: var(--font-700);
+}
+
+.title {
+  font-size: var(--text-24);
+  font-weight: var(--font-700);
+}

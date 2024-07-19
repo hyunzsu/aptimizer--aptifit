@@ -1,0 +1,20 @@
+.TestPage {
+  padding: var(--spacing-64) 0;
+}
+
+.titleContainer {
+  margin-bottom: var(--spacing-64);
+}
+
+.progressBarContainer {
+  margin-bottom: var(--spacing-64);
+}
+
+.quizContainer {
+  margin-bottom: var(--spacing-64);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}

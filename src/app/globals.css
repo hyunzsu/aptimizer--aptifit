@@ -1,0 +1,35 @@
+@import url("reset.css");
+@import url("root.css");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.active {
+  color: black;
+  transition: color 200ms ease-in-out;
+}
+
+.inactive {
+  color: gray;
+  transition: color 200ms ease-in-out;
+}

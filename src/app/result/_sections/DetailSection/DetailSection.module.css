@@ -1,0 +1,92 @@
+.DetailSection {
+  padding: 40px 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.container {
+  padding: 2.4rem 4.8rem;
+  background-color: #fafafa;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  position: relative;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.blur {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blurInfoContainer {
+  width: 600px;
+  height: 200px;
+  background-color: var(--secondary);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.description {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  margin-bottom: 16px;
+}
+
+/* 흥미 */
+.keywordContainer {
+  margin-bottom: 24px;
+}
+
+.interests2Container {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.interests2Keyword {
+  background-color: var(--secondary);
+  width: 100px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.interests2KeywordMain {
+  background-color: var(--primary);
+  color: white;
+}

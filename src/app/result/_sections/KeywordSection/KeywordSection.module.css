@@ -1,0 +1,29 @@
+.KeywordSection {
+  padding: 40px 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.keywordContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 2.4rem;
+}
+
+.keyword {
+  font-weight: 700;
+}

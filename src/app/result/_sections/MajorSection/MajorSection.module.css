@@ -1,0 +1,28 @@
+.MajorSection {
+  padding: 40px 0;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 64px;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.description {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.major {
+  font-size: 24px;
+  line-height: 3.6rem;
+  font-weight: 700;
+}
