@@ -7,24 +7,32 @@
 
 .informationPageContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
 .title {
-  font-size: var(--text-36);
+  font-size: var(--text-28);
   font-weight: var(--font-700);
-  margin-bottom: var(--spacing-64);
+  margin-bottom: var(--spacing-24);
+}
+
+.container {
+  display: flex;
+  align-items: center;
 }
 
 .image {
-  margin-bottom: var(--spacing-48);
+  flex: 1;
   width: 100%;
 }
 
-.pContainer {
+.rightContainer {
+  flex: 1;
+}
+
+.textContainer {
   margin-bottom: var(--spacing-24);
 }
 
@@ -32,16 +40,41 @@
   font-weight: var(--font-700);
 }
 
-.p {
+.description {
   font-size: var(--text-18);
   line-height: 3rem;
-  max-width: 800px;
   margin-bottom: var(--spacing-8);
 }
 
-.warning {
-  color: var(--blue);
-  font-size: var(--text-20);
-  font-weight: var(--font-700);
-  margin-bottom: var(--spacing-16);
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary);
+}
+
+.button:hover {
+  background-color: var(--primary);
+}
+
+@media (max-width: 425px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .image {
+    margin-bottom: 64px;
+  }
+
+  .title {
+    font-size: var(--text-24);
+  }
 }
