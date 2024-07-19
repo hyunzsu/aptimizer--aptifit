@@ -17,7 +17,7 @@ const InformationPage = () => {
   const startTest = async () => {
     // 1. 데이터 초기화 및 세션스토리지 저장
     const initializeData = await initializeTest();
-    sessionStorage.setItem("1", JSON.stringify(initializeData));
+    sessionStorage.setItem("bootcamp1", JSON.stringify(initializeData));
 
     // 2. 테스트 페이지로 이동
     router.push("/test/1");
@@ -77,7 +77,7 @@ const InformationPage = () => {
                   </p>
                 </div>
                 <div className={s.buttonContainer}>
-                  <Button onClick={goToNextPage}>검사 시작</Button>
+                  <Button onClick={startTest}>검사 시작</Button>
                 </div>
               </div>
             </div>
