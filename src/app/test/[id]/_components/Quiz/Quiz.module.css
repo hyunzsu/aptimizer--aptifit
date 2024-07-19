@@ -9,7 +9,6 @@
 
 .quizTitle {
   font-size: var(--text-20);
-  font-weight: var(--font-500);
   line-height: 3rem;
 }
 
@@ -45,4 +44,27 @@
 .quizRadioTitle {
   cursor: pointer;
   font-size: var(--text-16);
+}
+
+.radioLabelMobile {
+  width: 100%;
+  display: none;
+  font-size: var(--text-16);
+  justify-content: space-between;
+}
+
+/* 반응형 */
+@media (max-width: 425px) {
+  .quizTitle {
+    font-size: var(--text-16);
+    line-height: 2.4rem;
+  }
+
+  .quizRadioTitle {
+    display: none;
+  }
+
+  .radioLabelMobile {
+    display: flex;
+  }
 }

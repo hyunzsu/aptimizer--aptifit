@@ -17,7 +17,7 @@ const Quiz = ({ questionId, question, responses, setResponses, isActive }: TQuiz
   const params = useParams();
 
   useEffect(() => {
-    const savedData = sessionStorage.getItem(`${params.id}`);
+    const savedData = sessionStorage.getItem(`bootcamp${params.id}`);
     if (savedData) {
       const parsedData = JSON.parse(savedData);
       setTestData(parsedData);
@@ -36,7 +36,7 @@ const Quiz = ({ questionId, question, responses, setResponses, isActive }: TQuiz
       responses: newResponses,
     };
 
-    sessionStorage.setItem(`${params.id}`, JSON.stringify(newSavedData));
+    sessionStorage.setItem(`bootcamp${params.id}`, JSON.stringify(newSavedData));
   };
 
   return (
@@ -68,6 +68,10 @@ const Quiz = ({ questionId, question, responses, setResponses, isActive }: TQuiz
           </div>
         ))}
       </div>
+      <p className={s.radioLabelMobile}>
+        <span>전혀 그렇지 않다</span>
+        <span>매우 그렇다</span>
+      </p>
     </div>
   );
 };
