@@ -21,6 +21,7 @@
 
 .image {
   margin-bottom: var(--spacing-48);
+  width: 100%;
 }
 
 .pContainer {
