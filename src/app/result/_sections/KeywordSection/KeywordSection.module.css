@@ -27,3 +27,24 @@
 .keyword {
   font-weight: 700;
 }
+
+@media (max-width: 425px) {
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: var(--spacing-24);
+  }
+
+  .keywordContainer {
+    order: 2;
+    width: 100%;
+  }
+
+  .image {
+    order: 1;
+    width: 100%;
+  }
+}
