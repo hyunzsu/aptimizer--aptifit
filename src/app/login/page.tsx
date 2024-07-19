@@ -18,7 +18,7 @@ const LoginPage = () => {
   return (
     <main className={s.LoginPage}>
       <LayoutContainer>
-        <h2 className={s.title}>로그인</h2>
+        <h2 className={s.title}>내 결과지 확인하기</h2>
         <div className={s.inputContainer}>
           <Input
             label="고유 번호"
