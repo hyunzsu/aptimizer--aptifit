@@ -4,13 +4,14 @@ import { ReactNode } from "react";
 import s from "./Button.module.css";
 
 type TButton = {
+  type?: "button" | "submit";
   children: ReactNode;
-  onClick: any;
+  onClick?: any;
 };
 
-const Button = ({ children, onClick }: TButton) => {
+const Button = ({ children, onClick, type = "button" }: TButton) => {
   return (
-    <button className={s.Button} type="button" onClick={onClick}>
+    <button className={s.Button} type={type} onClick={onClick}>
       {children}
     </button>
   );
