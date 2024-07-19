@@ -54,7 +54,7 @@ const TestPage = () => {
   };
 
   if (loading) {
-    return <Loading />;
+    return <Loading text="데이터를 준비 중입니다..." />;
   }
 
   return (
