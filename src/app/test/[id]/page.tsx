@@ -29,7 +29,7 @@ const TestPage = () => {
   // 다음 페이지로 돌아가기
   const goToNextPage = async () => {
     const nextPage = Number(params.id) + 1;
-    const savedData = sessionStorage.getItem(`${params.id}`);
+    const savedData = sessionStorage.getItem(`bootcamp${params.id}`);
 
     // 7 페이지라면 바로 결과지로 페이지 이동
     if (nextPage === 7) {
@@ -44,7 +44,7 @@ const TestPage = () => {
       const parsedData = JSON.parse(savedData);
 
       const submitData = await submitResponses(parsedData);
-      sessionStorage.setItem(`${nextPage}`, JSON.stringify(submitData));
+      sessionStorage.setItem(`bootcamp${nextPage}`, JSON.stringify(submitData));
 
       router.push(`/test/${nextPage}`);
 
