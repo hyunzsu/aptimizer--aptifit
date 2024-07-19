@@ -17,11 +17,8 @@ const DetailNavigation = ({ setNav }) => {
       <li className={`${s.li} ${s.characteristics}`} onClick={() => handleClick("개인특성")}>
         개인특성
       </li>
-      <li className={`${s.li} ${s.interest}`} onClick={() => handleClick("흥미1")}>
-        흥미1
-      </li>
-      <li className={`${s.li} ${s.interest}`} onClick={() => handleClick("흥미2")}>
-        흥미2
+      <li className={`${s.li} ${s.interest}`} onClick={() => handleClick("흥미")}>
+        흥미
       </li>
       <li className={`${s.li} ${s.knowledge}`} onClick={() => handleClick("지식")}>
         지식
