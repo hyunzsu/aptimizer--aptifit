@@ -12,8 +12,8 @@ const ResultPage = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const savedData = sessionStorage.getItem("6");
-    const resultData = sessionStorage.getItem("7");
+    const savedData = sessionStorage.getItem("bootcamp6");
+    const resultData = sessionStorage.getItem("bootcamp7");
 
     const loadingData = async () => {
       setLoading(true);
@@ -22,7 +22,7 @@ const ResultPage = () => {
         const parsedData = JSON.parse(savedData);
 
         const submitData = await submitResponses(parsedData);
-        sessionStorage.setItem("7", JSON.stringify(submitData));
+        sessionStorage.setItem("bootcamp7", JSON.stringify(submitData));
         setResultData(submitData);
 
         setTimeout(() => {
