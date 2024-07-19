@@ -13,7 +13,7 @@
   border-top: 10px solid #3498db; /* Blue */
   border-radius: 50%;
   animation: spin 1s linear infinite;
-  margin-bottom: var(--spacing-24);
+  margin-bottom: var(--spacing-32);
 }
 
 .text {
@@ -27,5 +27,16 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 425px) {
+  .spinner {
+    width: 80px;
+    height: 80px;
+  }
+
+  .text {
+    font-size: var(--text-18);
   }
 }
