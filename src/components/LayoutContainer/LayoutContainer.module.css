@@ -1,5 +1,6 @@
 .LayoutContainer {
   max-width: 1140px;
+  width: 100%;
   padding: 0 var(--spacing-16);
   margin: 0 auto;
 }
