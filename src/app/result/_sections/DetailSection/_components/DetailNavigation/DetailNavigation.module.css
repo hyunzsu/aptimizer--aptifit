@@ -40,6 +40,7 @@
   .DetailNavigation {
     flex-direction: column;
     gap: var(--spacing-8);
+    margin-bottom: var(--spacing-16);
   }
 
   .li {
