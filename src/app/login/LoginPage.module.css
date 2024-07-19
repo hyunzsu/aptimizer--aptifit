@@ -1,0 +1,21 @@
+.LoginPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.title {
+  font-size: var(--text-40);
+  font-weight: var(--font-700);
+  margin-bottom: var(--spacing-64);
+}
+
+.inputContainer {
+  margin-bottom: var(--spacing-24);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
