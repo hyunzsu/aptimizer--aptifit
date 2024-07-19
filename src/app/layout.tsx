@@ -11,6 +11,9 @@ const pretendard = localFont({
 
 export const metadata: Metadata = {
   title: "앱티마이저 | 한라",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
