@@ -1,11 +1,13 @@
 const initializeTest = async () => {
+  const userData = sessionStorage.getItem("user");
+
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_INITIALIZE}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_INITIALIZE_BOOTCAMP}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name: "", university: "", phone: "", interests: "" }),
+      body: userData,
     });
 
     if (!res.ok) {
