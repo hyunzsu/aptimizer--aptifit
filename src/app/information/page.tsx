@@ -27,9 +27,6 @@ const InformationPage = () => {
           <h1 className={s.title}>안내 사항</h1>
           <Image className={s.image} src={Teach} width={435} height={400} alt="설명하는 남자" />
           <div className={s.pContainer}>
-            <p className={s.warning}>
-              해당 검사는 라이트 버전으로 상세한 진단 결과는 분양 계약자분들께 추후에 제공될 예정입니다.
-            </p>
             <p className={s.p}>
               <span className={s.bold}>대학 전공 적성 검사</span>는 우리나라 주요 4년제 대학의 135개 학과에 대한 정보를
               바탕으로, AI가 여러분의 전공 적성을 분석해주는 도구입니다. 이 검사는 학문 프로파일 AI를 기반으로 피험자의
