@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { LayoutContainer, Input, Button } from "@/components";
 import s from "./RegisterPage.module.css";
 
@@ -11,11 +12,14 @@ const RegisterPage = () => {
     phone: "",
   });
 
+  const router = useRouter();
+
   // 폼 제출
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
     console.log(formData);
+
+    router.push("/information");
   };
 
   // 인풋 입력값 업데이트
