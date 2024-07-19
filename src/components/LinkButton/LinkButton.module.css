@@ -1,0 +1,24 @@
+.LinkButton {
+  cursor: pointer;
+  display: inline-block;
+  font-size: var(--text-18);
+  font-weight: var(--font-700);
+  background-color: var(--secondary);
+  padding: var(--spacing-16) var(--spacing-24);
+  transition: all 200ms ease-in-out;
+  border-radius: var(--border-8);
+  color: var(--black);
+}
+
+.LinkButton:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* 반응형 */
+
+@media (max-width: 425px) {
+  .LinkButton {
+    font-size: var(--text-16);
+  }
+}
