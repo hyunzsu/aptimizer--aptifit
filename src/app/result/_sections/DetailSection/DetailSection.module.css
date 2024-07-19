@@ -11,7 +11,6 @@
 .container {
   padding: 2.4rem 4.8rem;
   background-color: #fafafa;
-  border-top-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   position: relative;
@@ -89,4 +88,11 @@
 .interests2KeywordMain {
   background-color: var(--primary);
   color: white;
+}
+
+@media (max-width: 425px) {
+  .container {
+    padding: var(--spacing-16);
+    border-radius: 0.8rem;
+  }
 }
