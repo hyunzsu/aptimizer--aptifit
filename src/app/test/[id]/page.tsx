@@ -10,14 +10,13 @@ import s from "./TestPage.module.css";
 const TestPage = () => {
   const [questions, setQuestions] = useState([]);
   const [responses, setResponses] = useState([]);
-
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
   const params = useParams();
 
   useEffect(() => {
-    const savedData = sessionStorage.getItem(`${params.id}`);
+    const savedData = sessionStorage.getItem(`bootcamp${params.id}`);
 
     if (savedData) {
       const { questions, responses } = JSON.parse(savedData);
@@ -26,13 +25,37 @@ const TestPage = () => {
     }
   }, []);
 
+  // 폼 유효성 검증
+  const formValidation = () => {
+    const savedData = sessionStorage.getItem(`bootcamp${params.id}`);
+
+    if (savedData) {
+      const parsedData = JSON.parse(savedData);
+      const { responses } = parsedData;
+
+      const hasZero = responses.includes(0);
+
+      if (hasZero) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  };
+
   // 다음 페이지로 돌아가기
   const goToNextPage = async () => {
     const nextPage = Number(params.id) + 1;
     const savedData = sessionStorage.getItem(`bootcamp${params.id}`);
 
-    // 7 페이지라면 바로 결과지로 페이지 이동
-    if (nextPage === 7) {
+    // 풀지않은 문제가 있다면 통과 X
+    if (!formValidation()) {
+      alert("아직 풀지 않은 문제가 있습니다!");
+      return;
+    }
+
+    // 10 페이지라면 바로 결과지로 페이지 이동
+    if (nextPage === 10) {
       router.push("/result");
       return;
     }
@@ -50,7 +73,6 @@ const TestPage = () => {
 
       setLoading(false);
     }
-    console.log(params.id, nextPage);
   };
 
   if (loading) {
