@@ -12,7 +12,7 @@ const HomePage = () => {
         <h1 className={s.title}>앱티핏 대학 전공 적성 검사</h1>
         <p className={s.subtitle}>너의 전공을 찾아봐</p>
         <div className={s.buttonContainer}>
-          <LinkButton href="/information" label="시작하기" />
+          <LinkButton href="/register" label="시작하기" />
           <LinkButton href="/login" label="결과확인" />
         </div>
       </div>
