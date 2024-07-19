@@ -1,18 +1,29 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import s from "./LoginPage.module.css";
+import { useRouter } from "next/navigation";
 import { LayoutContainer, Input, Button } from "@/components";
+import s from "./LoginPage.module.css";
 
 const LoginPage = () => {
   const [phone, setPhone] = useState("");
+  const router = useRouter();
 
+  // input 입력값
   const handleInputChange = (e) => {
     setPhone(e.target.value);
   };
 
+  // 고유 번호 인증
   const handleClick = () => {
-    console.log(phone);
+    const authentication = false;
+
+    if (!authentication) {
+      alert("고유 번호를 발견하지 못했습니다!");
+      return;
+    }
+
+    router.push("/result");
   };
 
   return (
