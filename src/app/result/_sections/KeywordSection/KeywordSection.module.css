@@ -5,6 +5,7 @@
 .title {
   font-size: 24px;
   font-weight: 700;
+  margin-bottom: 32px;
 }
 
 .container {
@@ -16,15 +17,28 @@
 .keywordContainer {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
 
 .description {
   font-size: 18px;
-  line-height: 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--secondary);
+  border-radius: 100px;
+  padding: 4px 12px;
 }
 
 .keyword {
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -46,5 +60,11 @@
   .image {
     order: 1;
     width: 100%;
+  }
+
+  .description {
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 2.7rem;
   }
 }
