@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Chatbot from "../../../../../public/svg/chatbot.svg";
 
+import { RankingCard } from "./_components";
 import s from "./MajorSection.module.css";
 
 const MajorSection = ({ resultData }) => {
@@ -17,11 +18,7 @@ const MajorSection = ({ resultData }) => {
       </p>
       <div className={s.majorsContainer}>
         {majors?.map((major, i) => {
-          return (
-            <span key={i} className={s.major}>
-              {`${i + 1}`}. {major}
-            </span>
-          );
+          return <RankingCard key={`${i} ${major}`} title={major} rank={i} />;
         })}
       </div>
     </section>

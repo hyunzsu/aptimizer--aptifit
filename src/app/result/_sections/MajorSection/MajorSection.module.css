@@ -23,7 +23,9 @@
 
 .majorsContainer {
   display: flex;
-  gap: 32px;
+  justify-content: center;
+  gap: 80px;
+
   margin-bottom: 6.4rem;
 }
 
