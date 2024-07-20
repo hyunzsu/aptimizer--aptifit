@@ -2,6 +2,33 @@
   padding: var(--spacing-64) 0;
 }
 
+.titleContainer {
+  margin-bottom: 64px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.warning {
+  font-size: 16px;
+  font-weight: 500;
+  color: blue;
+}
+
+@media (max-width: 425px) {
+  .title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .warning {
+    font-size: 14px;
+  }
+}
+
 /* .buttonContainer {
   display: flex;
   justify-content: center;
