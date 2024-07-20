@@ -4,24 +4,24 @@ import s from "./PentagonGraph.module.css";
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
-const PentagonGraph = ({ result }) => {
+const PentagonGraph = ({ type }) => {
   const data = {
     labels: [
-      `${result.strength.details[0].field}`,
-      `${result.strength.details[1].field}`,
-      `${result.strength.details[2].field}`,
-      `${result.strength.details[3].field}`,
-      `${result.strength.details[4].field}`,
+      `${type.details[0].field}`,
+      `${type.details[1].field}`,
+      `${type.details[2].field}`,
+      `${type.details[3].field}`,
+      `${type.details[4].field}`,
     ],
     datasets: [
       {
         label: "역량",
         data: [
-          `${result.strength.details[0].score}`,
-          `${result.strength.details[1].score}`,
-          `${result.strength.details[2].score}`,
-          `${result.strength.details[3].score}`,
-          `${result.strength.details[4].score}`,
+          `${type.details[0].score}`,
+          `${type.details[1].score}`,
+          `${type.details[2].score}`,
+          `${type.details[3].score}`,
+          `${type.details[4].score}`,
         ],
         fill: true,
         backgroundColor: "rgba(54, 162, 235, 0.2)",
@@ -47,11 +47,15 @@ const PentagonGraph = ({ result }) => {
         suggestedMin: 1,
         suggestedMax: 7,
         pointLabels: {
+          // font: {
+          //   size: 14,
+          //   weight: "bold",
+          // },
+          // color: "black",
           font: {
-            size: 14,
             weight: "bold",
           },
-          color: "black",
+          // display: false,
         },
       },
     },
@@ -62,7 +66,7 @@ const PentagonGraph = ({ result }) => {
     },
     plugins: {
       legend: {
-        display: false, // 범례 숨기기 (필요시 사용)
+        display: false,
       },
     },
   };
