@@ -41,6 +41,10 @@
   border-radius: 0.8rem;
 }
 
+.majorsMobileContainer {
+  display: none;
+}
+
 /* 반응형 */
 
 @media (max-width: 425px) {
@@ -57,8 +61,13 @@
   }
 
   .majorsContainer {
+    display: none;
+  }
+
+  .majorsMobileContainer {
+    display: flex;
     flex-direction: column;
-    gap: var(--spacing-16);
+    align-items: center;
   }
 
   .major {
@@ -66,5 +75,26 @@
     font-size: 16px;
     padding: 16px;
     border-radius: 0.8rem;
+  }
+
+  .innerContainer {
+    margin-bottom: 24px;
+  }
+
+  .bullets {
+    display: flex;
+    gap: 8px;
+  }
+
+  .bullet {
+    width: 4rem;
+    height: 1rem;
+    border-radius: 0.8rem;
+    background-color: var(--secondary);
+    transition: background-color 200ms linear;
+  }
+
+  .active {
+    background-color: var(--primary);
   }
 }

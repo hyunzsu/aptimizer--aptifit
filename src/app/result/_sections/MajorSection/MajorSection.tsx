@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Chatbot from "../../../../../public/svg/chatbot.svg";
 
@@ -5,8 +8,13 @@ import { RankingCard } from "./_components";
 import s from "./MajorSection.module.css";
 
 const MajorSection = ({ resultData }) => {
+  const [currentRank, setCurrentRank] = useState(0);
   const { major_title_1, major_title_2, major_title_3 } = resultData;
   const majors = [major_title_1, major_title_2, major_title_3];
+
+  const handleClick = (rank) => {
+    setCurrentRank(rank);
+  };
   return (
     <section className={s.MajorSection}>
       <p className={s.title}>앱티핏 적성검사 결과</p>
@@ -20,6 +28,21 @@ const MajorSection = ({ resultData }) => {
         {majors?.map((major, i) => {
           return <RankingCard key={`${i} ${major}`} title={major} rank={i} />;
         })}
+      </div>
+      {/* 모바일 */}
+      <div className={s.majorsMobileContainer}>
+        <div className={s.innerContainer}>
+          {majors?.map((major, i) => {
+            if (currentRank === i) {
+              return <RankingCard key={`${i} ${major}`} title={major} rank={i} />;
+            }
+          })}
+        </div>
+        <div className={s.bullets}>
+          <div className={`${s.bullet} ${currentRank === 0 ? s.active : ""}`} onClick={() => handleClick(0)}></div>
+          <div className={`${s.bullet} ${currentRank === 1 ? s.active : ""}`} onClick={() => handleClick(1)}></div>
+          <div className={`${s.bullet} ${currentRank === 2 ? s.active : ""}`} onClick={() => handleClick(2)}></div>
+        </div>
       </div>
     </section>
   );
