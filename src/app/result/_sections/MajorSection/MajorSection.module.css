@@ -3,9 +3,9 @@
 }
 
 .title {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 700;
-  margin-bottom: 64px;
+  margin-bottom: 8px;
 }
 
 .imageContainer {
@@ -15,9 +15,8 @@
 }
 
 .description {
-  font-size: 1.8rem;
+  font-size: var(--spacing-16);
   line-height: 2.7rem;
-  text-align: center;
   margin-bottom: 40px;
 }
 
@@ -48,15 +47,9 @@
 /* 반응형 */
 
 @media (max-width: 425px) {
-  .title {
-    font-size: var(--text-28);
-    text-align: center;
-  }
-
   .description {
     font-size: var(--text-16);
     line-height: 2.4rem;
-    text-align: left;
     margin-bottom: 40px;
   }
 

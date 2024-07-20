@@ -17,10 +17,11 @@ const MajorSection = ({ resultData }) => {
   };
   return (
     <section className={s.MajorSection}>
-      <p className={s.title}>앱티핏 적성검사 결과</p>
-      <div className={s.imageContainer}>
+      <p className={s.title}>나의 학과 적성 순위</p>
+
+      {/* <div className={s.imageContainer}>
         <Image src={Chatbot} alt="챗봇" width={300} height={280} />
-      </div>
+      </div> */}
       <p className={s.description}>
         5대 적성 요소인 역량, 가치, 개인특성, 흥미, 지식을 종합하여 봤을 때 가장 적합한 학과는 다음과 같습니다.
       </p>

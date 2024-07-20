@@ -11,7 +11,7 @@ const KeywordSection = ({ resultData }) => {
   const { keywords } = resultData;
   return (
     <section className={s.KeywordSection}>
-      <h3 className={s.title}>학과 선정 이유</h3>
+      <h3 className={s.title}>5대 역량 분석</h3>
       <div className={s.container}>
         <div className={s.keywordContainer}>
           <div className={s.description}>

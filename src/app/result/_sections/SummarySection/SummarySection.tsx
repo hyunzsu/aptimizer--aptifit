@@ -9,7 +9,7 @@ const SummarySection = ({ resultData }) => {
 
   return (
     <section className={s.SummarySection}>
-      <h3 className={s.title}>종합결과</h3>
+      <h3 className={s.title}>학과 세부 설명</h3>
       <div className={s.cardContainer}>
         <SummaryCard type="definition" majorData={majorData} />
         <SummaryCard type="ideal" majorData={majorData} />
