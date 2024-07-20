@@ -6,7 +6,7 @@ import { DetailNavigation, Table, PentagonGraph } from "./_components";
 import s from "./DetailSection.module.css";
 
 const DetailSection = ({ resultData }) => {
-  const { result, wordcloud_image_base64 } = resultData;
+  const { result } = resultData;
   const [nav, setNav] = useState("역량");
 
   const renderSection = () => {
@@ -18,7 +18,7 @@ const DetailSection = ({ resultData }) => {
             <div>
               <div className={s.table}>
                 {/* 그래프 */}
-                <PentagonGraph result={result} />
+                <PentagonGraph type={result.strength} />
                 {/* 테이블 */}
                 <Table result={result.strength} />
               </div>
@@ -41,13 +41,13 @@ const DetailSection = ({ resultData }) => {
             <div>
               <div className={s.table}>
                 {/* 그래프 */}
-                <PentagonGraph result={result} />
+                <PentagonGraph type={result.value} />
                 {/* 테이블 */}
                 <Table result={result.value} />
               </div>
             </div>
             <div>
-              {result.strength.descriptions.map((v, i) => {
+              {result.value.descriptions.map((v, i) => {
                 return (
                   <p key={i} className={s.description}>
                     {v}
@@ -60,17 +60,17 @@ const DetailSection = ({ resultData }) => {
       case "개인특성":
         return (
           <div className={s.container}>
-            <h3 className={s.subtitle}>가치</h3>
+            <h3 className={s.subtitle}>개인특성</h3>
             <div>
               <div className={s.table}>
                 {/* 그래프 */}
-                <PentagonGraph result={result} />
+                <PentagonGraph type={result.characteristic} />
                 {/* 테이블 */}
-                <Table result={result.value} />
+                <Table result={result.characteristic} />
               </div>
             </div>
             <div>
-              {result.strength.descriptions.map((v, i) => {
+              {result.characteristic.descriptions.map((v, i) => {
                 return (
                   <p key={i} className={s.description}>
                     {v}
@@ -88,35 +88,34 @@ const DetailSection = ({ resultData }) => {
               <div className={s.table}>
                 {/* 테이블 */}
                 {/* <Image src={`data:image/png;base64,${wordcloud_image_base64}`} alt="" width={1000} height={350} /> */}
-                {/* <Table result={result.interests1} /> */}
+                <Table result={result.interest} />
               </div>
             </div>
             <div>
-              {/* {result.interests1.descriptions.map((v, i) => {
+              {result.interest.descriptions.map((v, i) => {
                 return (
                   <p key={i} className={s.description}>
                     {v}
                   </p>
                 );
-              })} */}
+              })}
             </div>
           </div>
         );
       case "지식":
         return (
           <div className={s.container}>
-            <div className={s.blur}>
-              <div className={s.blurInfoContainer}>해당 컨텐츠는 에듀 프리미엄에서 제공됩니다</div>
-            </div>
             <h3 className={s.subtitle}>지식</h3>
             <div>
               <div className={s.table}>
+                {/* 그래프 */}
+                <PentagonGraph type={result.knowledge} />
                 {/* 테이블 */}
-                <Table result={result.strength} />
+                <Table result={result.knowledge} />
               </div>
             </div>
             <div>
-              {result.strength.descriptions.map((v, i) => {
+              {result.knowledge.descriptions.map((v, i) => {
                 return (
                   <p key={i} className={s.description}>
                     {v}
