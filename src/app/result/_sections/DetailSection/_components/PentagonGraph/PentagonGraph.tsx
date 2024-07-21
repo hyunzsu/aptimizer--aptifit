@@ -47,15 +47,11 @@ const PentagonGraph = ({ type }) => {
         suggestedMin: 1,
         suggestedMax: 7,
         pointLabels: {
-          // font: {
-          //   size: 14,
-          //   weight: "bold",
-          // },
-          // color: "black",
           font: {
+            size: 10,
             weight: "bold",
           },
-          // display: false,
+          color: "black",
         },
       },
     },
