@@ -7,6 +7,7 @@ import s from "./LoginPage.module.css";
 
 const LoginPage = () => {
   const [phone, setPhone] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   // 휴대폰 번호
@@ -42,13 +43,15 @@ const LoginPage = () => {
     }
 
     // 회원 확인
+    setLoading(true);
     const res = await checkUser();
 
     if (res.authorization === false) {
+      setLoading(false);
       alert("결과지 데이터가 없습니다!");
       return;
     }
-
+    setLoading(false);
     sessionStorage.setItem("bootcamp10", JSON.stringify(res));
     router.push("/result");
   };
