@@ -47,6 +47,8 @@ const ResultPage = () => {
     return (
       <main className={s.ResultPage}>
         <LayoutContainer>
+          <h1 className={s.title}>🤖 앱티핏 적성 검사</h1>
+          <p className={s.warning}>*결과지는 1순위만 제공됩니다</p>
           {/* 1. 결과 섹션 */}
           <MajorSection resultData={resultData} />
           {/* 2. 학과 설명 섹션 */}
