@@ -5,6 +5,12 @@
   height: 100vh;
 }
 
+.container {
+  width: 100%;
+  max-width: 425px;
+  padding: 0 16px;
+}
+
 .title {
   font-size: var(--text-40);
   font-weight: var(--font-700);
@@ -24,6 +30,10 @@
 }
 
 @media (max-width: 425px) {
+  .container {
+    width: 100%;
+  }
+
   .title {
     font-size: var(--text-28);
     margin-bottom: var(--spacing-48);

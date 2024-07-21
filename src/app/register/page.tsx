@@ -35,7 +35,7 @@ const RegisterPage = () => {
 
   return (
     <main className={s.RegisterPage}>
-      <LayoutContainer>
+      <div className={s.container}>
         <h2 className={s.title}>회원 등록</h2>
         <form className={s.form} onSubmit={handleFormSubmit}>
           <div className={s.inputContainer}>
@@ -65,7 +65,7 @@ const RegisterPage = () => {
             <Button type="submit">등록</Button>
           </div>
         </form>
-      </LayoutContainer>
+      </div>
     </main>
   );
 };
