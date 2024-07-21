@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { DetailNavigation, Table, PentagonGraph, Card } from "./_components";
 import s from "./DetailSection.module.css";
 
