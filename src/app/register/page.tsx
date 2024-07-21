@@ -2,41 +2,69 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { LayoutContainer, Input, Button } from "@/components";
+import { Input, Button } from "@/components";
 import s from "./RegisterPage.module.css";
 
 const RegisterPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    school: "",
-    phone: "",
-  });
+  const [name, setName] = useState("");
+  const [school, setSchool] = useState("");
+  const [phone, setPhone] = useState("");
 
   const router = useRouter();
+
+  // 휴대폰 형식 인증
+  const validatePhoneNumber = (phoneNumber) => {
+    const phoneRegex = /^(010|011|016|017|018|019)-?\d{3,4}-?\d{4}$/;
+    return phoneRegex.test(phoneNumber);
+  };
 
   // 폼 제출
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+
+    if (name === "" || school === "" || phone === "") {
+      alert("모든 필드를 채워주세요!");
+      return;
+    }
+
+    if (!validatePhoneNumber(phone)) {
+      alert("휴대폰 번호를 올바르게 입력하세요!");
+      return;
+    }
 
     // 회원가입 후 페이지1 데이터 세션 스토리지에 보관
     const register = await registerUser();
     sessionStorage.setItem("bootcamp1", JSON.stringify(register));
 
     // 유저 프로필 데이터 세션 스토리지에 보관
-    sessionStorage.setItem("user", JSON.stringify(formData));
+    sessionStorage.setItem("user", JSON.stringify({ name, school, phone }));
 
     // 페이지 이동
     router.push("/information");
   };
 
-  // 인풋 입력값 업데이트
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+  // 이름
+  const handleNameChange = (e) => {
+    const input = e.target.value;
+    const filteredInput = input.replace(/[0-9a-zA-Z]/g, "");
+    setName(filteredInput);
+  };
 
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+  // 학교
+  const handleSchoolChange = (e) => {
+    const input = e.target.value;
+
+    const filteredInput = input.replace(/[0-9a-zA-Z]/g, "");
+    setSchool(filteredInput);
+  };
+
+  // 휴대폰 번호
+  const handlePhoneChange = (e) => {
+    const input = e.target.value;
+
+    // 휴대폰 번호 형식 필터링 (숫자와 하이픈만 허용)
+    const filteredInput = input.replace(/[^0-9-]/g, "");
+    setPhone(filteredInput);
   };
 
   // 회원가입
@@ -47,7 +75,7 @@ const RegisterPage = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ name, school, phone }),
       });
 
       // 응답이 성공적인지 확인
@@ -73,26 +101,29 @@ const RegisterPage = () => {
             <Input
               label="이름"
               name="name"
-              value={formData.name}
-              placeholder="이름을 입력해주세요"
-              onChange={handleInputChange}
+              value={name}
+              placeholder="이름을 입력해주세요 (ex: 김스누로)"
+              onChange={handleNameChange}
             />
             <Input
               label="학교명"
               name="school"
-              value={formData.school}
-              placeholder="학교명을 입력해주세요"
-              onChange={handleInputChange}
+              value={school}
+              placeholder="학교명을 입력해주세요 (ex: 스누로중학교)"
+              onChange={handleSchoolChange}
             />
             <Input
               label="휴대폰"
               name="phone"
-              value={formData.phone}
-              placeholder="번호를 입력해주세요"
-              onChange={handleInputChange}
+              value={phone}
+              placeholder="휴대폰을 입력해주세요 (ex: 01012345678)"
+              onChange={handlePhoneChange}
             />
           </div>
           <div className={s.buttonContainer}>
+            <Button type="button" onClick={() => router.push("/")}>
+              이전
+            </Button>
             <Button type="submit">등록</Button>
           </div>
         </form>

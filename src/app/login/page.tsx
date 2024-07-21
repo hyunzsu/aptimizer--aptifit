@@ -2,19 +2,26 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { LayoutContainer, Input, Button } from "@/components";
+import { Input, Button } from "@/components";
 import s from "./LoginPage.module.css";
 
 const LoginPage = () => {
   const [phone, setPhone] = useState("");
   const router = useRouter();
 
-  // input 입력값
-  const handleInputChange = (e) => {
-    const inputValue = e.target.value;
-    if (validatePhoneNumber(inputValue) || inputValue === "") {
-      setPhone(e.target.value);
-    }
+  // 휴대폰 번호
+  const handlePhoneChange = (e) => {
+    const input = e.target.value;
+
+    // 휴대폰 번호 형식 필터링 (숫자와 하이픈만 허용)
+    const filteredInput = input.replace(/[^0-9-]/g, "");
+    setPhone(filteredInput);
+  };
+
+  // 휴대폰 형식 인증
+  const validatePhoneNumber = (phoneNumber) => {
+    const phoneRegex = /^(010|011|016|017|018|019)-?\d{3,4}-?\d{4}$/;
+    return phoneRegex.test(phoneNumber);
   };
 
   // 메인 페이지로 귀환
@@ -22,16 +29,15 @@ const LoginPage = () => {
     router.push("/");
   };
 
-  // 휴대폰 유효성 검사
-  const validatePhoneNumber = (phoneNumber) => {
-    const validChars = /^[0-9-]+$/;
-    return validChars.test(phoneNumber);
-  };
-
   // 고유 번호 인증
   const goToResultPage = async () => {
     if (phone === "") {
-      alert("필드에 값을 입력해주세요");
+      alert("휴대폰 번호를 입력해주세요");
+      return;
+    }
+
+    if (!validatePhoneNumber(phone)) {
+      alert("휴대폰 번호를 올바르게 입력하세요!");
       return;
     }
 
@@ -50,7 +56,6 @@ const LoginPage = () => {
   // 회원정보확인
   const checkUser = async () => {
     const data = { phone: phone };
-    console.log(data);
 
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_LOGIN_BOOTCAMP}`, {
@@ -84,7 +89,7 @@ const LoginPage = () => {
             name="phone"
             placeholder="휴대폰 번호를 입력해주세요."
             value={phone}
-            onChange={handleInputChange}
+            onChange={handlePhoneChange}
           />
         </div>
         <div className={s.buttonContainer}>
