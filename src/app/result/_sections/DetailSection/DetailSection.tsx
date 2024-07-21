@@ -7,7 +7,7 @@ import s from "./DetailSection.module.css";
 
 const DetailSection = ({ resultData }) => {
   const { result } = resultData;
-  const [nav, setNav] = useState("역량");
+  const [nav, setNav] = useState("흥미");
 
   const renderSection = () => {
     switch (nav) {
