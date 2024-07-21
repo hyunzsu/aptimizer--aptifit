@@ -15,15 +15,46 @@ const LoginPage = () => {
   };
 
   // 고유 번호 인증
-  const handleClick = () => {
-    const authentication = false;
+  const handleClick = async () => {
+    // 회원 확인
+    const res = await checkUser();
 
-    if (!authentication) {
-      alert("고유 번호를 발견하지 못했습니다!");
+    // 결과지 데이터가 없을 경우 회원등록 페이지로
+    if (!res.authorization) {
+      alert("결과지 데이터가 없습니다!");
+      router.push("/register");
       return;
     }
 
+    // 결과지 데이터가 있을 경우 바로 결과지 페이지로
+    sessionStorage.setItem("bootcamp10", JSON.stringify(res));
     router.push("/result");
+  };
+
+  // 회원정보확인
+  const checkUser = async () => {
+    const data = { phone: phone };
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_LOGIN_BOOTCAMP}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      // 응답이 성공적인지 확인
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+
+      // 응답 데이터를 JSON 형태로 변환
+      const res = await response.json();
+      return res;
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
