@@ -4,6 +4,11 @@
   justify-content: center;
   height: 100vh;
 }
+.container {
+  width: 100%;
+  max-width: 425px;
+  padding: 0 16px;
+}
 
 .title {
   font-size: var(--text-40);

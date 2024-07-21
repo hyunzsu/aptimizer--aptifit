@@ -28,13 +28,13 @@ const LoginPage = () => {
 
   return (
     <main className={s.LoginPage}>
-      <LayoutContainer>
+      <div className={s.container}>
         <h2 className={s.title}>내 결과지 확인하기</h2>
         <div className={s.inputContainer}>
           <Input
-            label="고유 번호"
+            label="휴대폰 번호"
             name="phone"
-            placeholder="고유 번호를 입력해주세요."
+            placeholder="휴대폰 번호를 입력해주세요."
             value={phone}
             onChange={handleInputChange}
           />
@@ -42,7 +42,7 @@ const LoginPage = () => {
         <div className={s.buttonContainer}>
           <Button onClick={handleClick}>다음</Button>
         </div>
-      </LayoutContainer>
+      </div>
     </main>
   );
 };
