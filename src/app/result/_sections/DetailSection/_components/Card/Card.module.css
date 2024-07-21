@@ -1,0 +1,30 @@
+.Card {
+  display: none;
+}
+
+.topContainer {
+  display: flex;
+  padding: var(--spacing-16);
+  justify-content: space-between;
+  font-size: var(--text-18);
+  font-weight: var(--font-700);
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+  background-color: var(--secondary);
+}
+
+.description {
+  padding: var(--spacing-16);
+  font-size: var(--text-16);
+  line-height: 2.4rem;
+}
+
+@media (max-width: 425px) {
+  .Card {
+    display: block;
+    width: 100%;
+    max-width: 425px;
+    background-color: var(--white);
+    border-radius: 0.8rem;
+  }
+}

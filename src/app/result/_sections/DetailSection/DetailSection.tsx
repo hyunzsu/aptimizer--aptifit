@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { DetailNavigation, Table, PentagonGraph } from "./_components";
+import { DetailNavigation, Table, PentagonGraph, Card } from "./_components";
 import s from "./DetailSection.module.css";
 
 const DetailSection = ({ resultData }) => {
@@ -21,6 +21,11 @@ const DetailSection = ({ resultData }) => {
                 <PentagonGraph type={result.strength} />
                 {/* 테이블 */}
                 <Table result={result.strength} />
+                {/* 모바일 카드 */}
+                {result.strength.details.map((item, index) => {
+                  const { field, score, content } = item;
+                  return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
+                })}
               </div>
             </div>
             <div>
@@ -44,6 +49,11 @@ const DetailSection = ({ resultData }) => {
                 <PentagonGraph type={result.value} />
                 {/* 테이블 */}
                 <Table result={result.value} />
+                {/* 모바일 카드 */}
+                {result.value.details.map((item, index) => {
+                  const { field, score, content } = item;
+                  return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
+                })}
               </div>
             </div>
             <div>
@@ -67,6 +77,10 @@ const DetailSection = ({ resultData }) => {
                 <PentagonGraph type={result.characteristic} />
                 {/* 테이블 */}
                 <Table result={result.characteristic} />
+                {result.characteristic.details.map((item, index) => {
+                  const { field, score, content } = item;
+                  return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
+                })}
               </div>
             </div>
             <div>
@@ -89,6 +103,10 @@ const DetailSection = ({ resultData }) => {
                 {/* 테이블 */}
                 {/* <Image src={`data:image/png;base64,${wordcloud_image_base64}`} alt="" width={1000} height={350} /> */}
                 <Table result={result.interest} />
+                {result.interest.details.map((item, index) => {
+                  const { field, score, content } = item;
+                  return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
+                })}
               </div>
             </div>
             <div>
@@ -112,6 +130,10 @@ const DetailSection = ({ resultData }) => {
                 <PentagonGraph type={result.knowledge} />
                 {/* 테이블 */}
                 <Table result={result.knowledge} />
+                {result.knowledge.details.map((item, index) => {
+                  const { field, score, content } = item;
+                  return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
+                })}
               </div>
             </div>
             <div>
