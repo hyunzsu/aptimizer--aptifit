@@ -74,7 +74,7 @@ const ResultLoading = () => {
           <span className={s.percentage}>{percentage}%</span>
         </div>
         {/* 문구 */}
-        <p className={s.description}>앱티봇이 {field} 분석 중 입니다...</p>
+        <p className={s.description}>앱티봇이 분석 중 입니다...</p>
       </LayoutContainer>
     </main>
   );
