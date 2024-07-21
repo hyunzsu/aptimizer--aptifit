@@ -11,11 +11,30 @@ const LoginPage = () => {
 
   // input 입력값
   const handleInputChange = (e) => {
-    setPhone(e.target.value);
+    const inputValue = e.target.value;
+    if (validatePhoneNumber(inputValue) || inputValue === "") {
+      setPhone(e.target.value);
+    }
+  };
+
+  // 메인 페이지로 귀환
+  const returnHome = () => {
+    router.push("/");
+  };
+
+  // 휴대폰 유효성 검사
+  const validatePhoneNumber = (phoneNumber) => {
+    const validChars = /^[0-9-]+$/;
+    return validChars.test(phoneNumber);
   };
 
   // 고유 번호 인증
-  const handleClick = async () => {
+  const goToResultPage = async () => {
+    if (phone === "") {
+      alert("필드에 값을 입력해주세요");
+      return;
+    }
+
     // 회원 확인
     const res = await checkUser();
 
@@ -31,6 +50,7 @@ const LoginPage = () => {
   // 회원정보확인
   const checkUser = async () => {
     const data = { phone: phone };
+    console.log(data);
 
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_LOGIN_BOOTCAMP}`, {
@@ -68,7 +88,8 @@ const LoginPage = () => {
           />
         </div>
         <div className={s.buttonContainer}>
-          <Button onClick={handleClick}>다음</Button>
+          <Button onClick={returnHome}>이전</Button>
+          <Button onClick={goToResultPage}>다음</Button>
         </div>
       </div>
     </main>
