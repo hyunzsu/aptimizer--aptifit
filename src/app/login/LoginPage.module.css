@@ -17,12 +17,12 @@
 }
 
 .inputContainer {
-  margin-bottom: var(--spacing-24);
+  margin-bottom: var(--spacing-40);
 }
 
 .buttonContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 425px) {
