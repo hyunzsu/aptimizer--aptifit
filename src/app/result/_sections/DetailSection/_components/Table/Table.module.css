@@ -1,8 +1,8 @@
 .Table {
   width: 100%;
-  font-size: 14px;
+  font-size: var(--text-14);
   background-color: #eff6ff;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 .tr {
@@ -11,21 +11,21 @@
 }
 
 .th {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: var(--text-16);
+  font-weight: var(--font-700);
   background-color: #d2d9ea;
-  padding: 16px 8px;
+  padding: var(--spacing-16);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .topleft {
-  border-top-left-radius: 10px;
+  border-top-left-radius: 1rem;
 }
 
 .topright {
-  border-top-right-radius: 10px;
+  border-top-right-radius: 1rem;
 }
 
 .tbody {
@@ -37,7 +37,7 @@
 .td {
   display: flex;
   align-items: center;
-  padding: 16px 8px;
+  padding: var(--spacing-16);
   line-height: 2.4rem;
   background-color: white;
 }
@@ -61,28 +61,15 @@
 }
 
 .bottomleft {
-  border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 1rem;
 }
 
 .bottomright {
-  border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 1rem;
 }
 
 @media (max-width: 425px) {
   .Table {
     display: none;
   }
-  /* .field {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-
-  .score {
-    flex: 1;
-  }
-
-  .content {
-    flex: 2;
-  } */
 }
