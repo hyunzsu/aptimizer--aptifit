@@ -4,21 +4,24 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { initializeTest } from "@/function";
-import { LayoutContainer, Button } from "@/components";
+import { LayoutContainer, Button, Loading } from "@/components";
 import Teach from "../../../public/svg/teach.svg";
 import RightArrow from "../../../public/svg/arrow_right.svg";
 import s from "./InformationPage.module.css";
 
 const InformationPage = () => {
   const [pageNumber, setPageNumber] = useState(1);
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   // 클릭하면 테스트 데이터를 초기화시키고 `test/1`로 이동한다.
   const startTest = async () => {
     // 1. 데이터 초기화 및 세션스토리지 저장
+    setLoading(true);
     const initializeData = await initializeTest();
     sessionStorage.setItem("bootcamp1", JSON.stringify(initializeData));
 
+    // setLoading(false);
     // 2. 테스트 페이지로 이동
     router.push("/test/1");
   };
@@ -85,6 +88,10 @@ const InformationPage = () => {
         );
     }
   };
+
+  if (loading) {
+    return <Loading text="테스트를 불러오는 중입니다..." />;
+  }
 
   return (
     <main className={s.InformationPage}>
