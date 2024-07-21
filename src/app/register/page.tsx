@@ -15,11 +15,17 @@ const RegisterPage = () => {
   const router = useRouter();
 
   // 폼 제출
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
+    // 회원가입 후 페이지1 데이터 세션 스토리지에 보관
+    const register = await registerUser();
+    sessionStorage.setItem("bootcamp1", JSON.stringify(register));
+
+    // 유저 프로필 데이터 세션 스토리지에 보관
     sessionStorage.setItem("user", JSON.stringify(formData));
 
+    // 페이지 이동
     router.push("/information");
   };
 
@@ -31,6 +37,31 @@ const RegisterPage = () => {
       ...prevFormData,
       [name]: value,
     }));
+  };
+
+  // 회원가입
+  const registerUser = async () => {
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_INITIALIZE_BOOTCAMP}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      // 응답이 성공적인지 확인
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+
+      // 응답 데이터를 JSON 형태로 변환
+      const res = await response.json();
+
+      return res;
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
