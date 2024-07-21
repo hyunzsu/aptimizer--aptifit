@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+// import Image from "next/image";
 import { DetailNavigation, Table, PentagonGraph, Card } from "./_components";
 import s from "./DetailSection.module.css";
 
@@ -100,7 +101,7 @@ const DetailSection = ({ resultData }) => {
             <div>
               <div className={s.table}>
                 {/* 테이블 */}
-                {/* <Image src={`data:image/png;base64,${wordcloud_image_base64}`} alt="" width={1000} height={350} /> */}
+                <PentagonGraph type={result.interests} />
                 <Table result={result.interests} />
                 {result.interests.details.map((item, index) => {
                   const { field, score, content } = item;
