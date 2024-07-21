@@ -3,9 +3,12 @@ import GoldMedal from "../../../../../../../public/svg/gold_medal.svg";
 import SilverMedal from "../../../../../../../public/svg/silver_medal.svg";
 import BronzeMedal from "../../../../../../../public/svg/bronze_medal.svg";
 import Star from "../../../../../../../public/svg/star.svg";
+import MAJORS_DATA from "../../../../../../data/majors_data.json";
 import s from "./RankingCard.module.css";
 
 const RankingCard = ({ title, rank }) => {
+  const summary = MAJORS_DATA.find((item) => item.major_title === title)?.summary;
+
   const renderRankingCard = (rank) => {
     switch (rank) {
       case 0:
@@ -19,7 +22,7 @@ const RankingCard = ({ title, rank }) => {
             </div>
 
             <p className={s.title}>{title}</p>
-            <p className={s.description}>아름답고 기능적인 건물을 설계하고 건축의 역사와 이론을 배우는 학문</p>
+            <p className={s.description}>{summary}</p>
           </div>
         );
 
@@ -34,7 +37,7 @@ const RankingCard = ({ title, rank }) => {
             </div>
 
             <p className={s.title}>{title}</p>
-            <p className={s.description}>아름답고 기능적인 건물을 설계하고 건축의 역사와 이론을 배우는 학문</p>
+            <p className={s.description}>{summary}</p>
           </div>
         );
       case 2:
@@ -48,7 +51,7 @@ const RankingCard = ({ title, rank }) => {
             </div>
 
             <p className={s.title}>{title}</p>
-            <p className={s.description}>아름답고 기능적인 건물을 설계하고 건축의 역사와 이론을 배우는 학문</p>
+            <p className={s.description}>{summary}</p>
           </div>
         );
     }
