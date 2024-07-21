@@ -102,15 +102,15 @@ const DetailSection = ({ resultData }) => {
               <div className={s.table}>
                 {/* 테이블 */}
                 {/* <Image src={`data:image/png;base64,${wordcloud_image_base64}`} alt="" width={1000} height={350} /> */}
-                <Table result={result.interest} />
-                {result.interest.details.map((item, index) => {
+                <Table result={result.interests} />
+                {result.interests.details.map((item, index) => {
                   const { field, score, content } = item;
                   return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
                 })}
               </div>
             </div>
             <div>
-              {result.interest.descriptions.map((v, i) => {
+              {result.interests.descriptions.map((v, i) => {
                 return (
                   <p key={i} className={s.description}>
                     {v}

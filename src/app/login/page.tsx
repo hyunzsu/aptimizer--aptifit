@@ -19,14 +19,11 @@ const LoginPage = () => {
     // 회원 확인
     const res = await checkUser();
 
-    // 결과지 데이터가 없을 경우 회원등록 페이지로
-    if (!res.authorization) {
+    if (res.authorization === false) {
       alert("결과지 데이터가 없습니다!");
-      router.push("/register");
       return;
     }
 
-    // 결과지 데이터가 있을 경우 바로 결과지 페이지로
     sessionStorage.setItem("bootcamp10", JSON.stringify(res));
     router.push("/result");
   };
