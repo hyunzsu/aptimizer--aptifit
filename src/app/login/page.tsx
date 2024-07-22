@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Input, Button } from "@/components";
+import { Input, Button, Loading } from "@/components";
 import s from "./LoginPage.module.css";
 
 const LoginPage = () => {
@@ -53,6 +53,7 @@ const LoginPage = () => {
     }
     setLoading(false);
     sessionStorage.setItem("bootcamp10", JSON.stringify(res));
+    setLoading(true);
     router.push("/result");
   };
 
@@ -81,6 +82,10 @@ const LoginPage = () => {
       console.error("Error:", error);
     }
   };
+
+  if (loading) {
+    return <Loading text="결과지를 불러오는 중입니다..." />;
+  }
 
   return (
     <main className={s.LoginPage}>
