@@ -56,6 +56,7 @@ const TestPage = () => {
 
     // 10 페이지라면 바로 결과지로 페이지 이동
     if (nextPage === 10) {
+      sessionStorage.removeItem("bootcamp10");
       router.push("/result");
       return;
     }
