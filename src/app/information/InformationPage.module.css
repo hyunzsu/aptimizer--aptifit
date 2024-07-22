@@ -66,6 +66,10 @@
 }
 
 @media (max-width: 425px) {
+  .InformationPage {
+    padding: 64px 0;
+  }
+
   .container {
     flex-direction: column;
   }
