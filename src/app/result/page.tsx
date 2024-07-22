@@ -1,15 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { DetailSection, MajorSection, SummarySection, KeywordSection } from "./_sections";
 import { ResultLoading } from "./_components";
 import { submitResponses } from "@/function";
-import { LayoutContainer } from "@/components";
+import { LayoutContainer, Button } from "@/components";
 import s from "./ResultPage.module.css";
 
 const ResultPage = () => {
   const [resultData, setResultData] = useState({});
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const savedData = sessionStorage.getItem("bootcamp9");
@@ -39,6 +41,11 @@ const ResultPage = () => {
     }
   }, []);
 
+  const handleClick = () => {
+    sessionStorage.clear();
+    router.push("/");
+  };
+
   if (loading) {
     return <ResultLoading />;
   }
@@ -58,6 +65,11 @@ const ResultPage = () => {
           {/* 4. 세부 분석 섹션 */}
           <DetailSection resultData={resultData} />
         </LayoutContainer>
+        <div className={s.buttonContainer}>
+          <Button type="button" onClick={handleClick}>
+            완료
+          </Button>
+        </div>
       </main>
     );
   }
