@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Input, Button } from "@/components";
+import { Input, Button, Loading } from "@/components";
 import s from "./RegisterPage.module.css";
 
 const RegisterPage = () => {
   const [name, setName] = useState("");
   const [school, setSchool] = useState("");
   const [phone, setPhone] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
@@ -33,6 +34,7 @@ const RegisterPage = () => {
     }
 
     // 회원가입 후 페이지1 데이터 세션 스토리지에 보관
+    setLoading(true);
     const register = await registerUser();
     sessionStorage.setItem("bootcamp1", JSON.stringify(register));
 
@@ -91,6 +93,10 @@ const RegisterPage = () => {
       console.error("Error:", error);
     }
   };
+
+  if (loading) {
+    return <Loading text="회원 등록을 진행 중입니다..." />;
+  }
 
   return (
     <main className={s.RegisterPage}>
