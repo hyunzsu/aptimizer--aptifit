@@ -1,0 +1,33 @@
+.Header {
+  background-color: var(--white);
+  border-bottom: 1px solid black;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 0 var(--spacing-16);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+}
+
+.logo {
+  font-size: var(--text-24);
+  font-weight: var(--font-900);
+}
+
+.link {
+  padding: var(--spacing-8) var(--spacing-16);
+  border-radius: 0.4rem;
+  font-size: var(--text-16);
+  font-weight: var(--font-600);
+  background-color: var(--secondary);
+  transition: all 200ms ease-in-out;
+}
+
+.link:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
