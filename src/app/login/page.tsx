@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Input, Button, Loading } from "@/components";
 import s from "./LoginPage.module.css";
 
@@ -43,18 +44,18 @@ const LoginPage = () => {
     }
 
     // 회원 확인
-    setLoading(true);
+    // setLoading(true);
     const res = await checkUser();
-
-    if (res.authorization === false) {
-      setLoading(false);
-      alert("결과지 데이터가 없습니다!");
-      return;
-    }
-    setLoading(false);
-    sessionStorage.setItem("bootcamp10", JSON.stringify(res));
-    setLoading(true);
-    router.push("/result");
+    console.log(res);
+    // if (res.authorization === false) {
+    //   setLoading(false);
+    //   alert("결과지 데이터가 없습니다!");
+    //   return;
+    // }
+    // setLoading(false);
+    // sessionStorage.setItem("bootcamp10", JSON.stringify(res));
+    // setLoading(true);
+    // router.push("/result");
   };
 
   // 회원정보확인
@@ -84,13 +85,13 @@ const LoginPage = () => {
   };
 
   if (loading) {
-    return <Loading text="결과지를 불러오는 중입니다..." />;
+    return <Loading text="사용자 정보를 확인하는 중입니다..." />;
   }
 
   return (
     <main className={s.LoginPage}>
       <div className={s.container}>
-        <h2 className={s.title}>내 결과지 확인하기</h2>
+        <h2 className={s.title}>로그인</h2>
         <div className={s.inputContainer}>
           <Input
             label="휴대폰 번호"
@@ -99,6 +100,9 @@ const LoginPage = () => {
             value={phone}
             onChange={handlePhoneChange}
           />
+          <Link className={s.link} href="register">
+            회원가입
+          </Link>
         </div>
         <div className={s.buttonContainer}>
           <Button onClick={returnHome}>이전</Button>
