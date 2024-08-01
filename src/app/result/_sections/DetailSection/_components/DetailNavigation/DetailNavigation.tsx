@@ -8,11 +8,11 @@ const DetailNavigation = ({ setNav }) => {
 
   return (
     <ul className={s.DetailNavigation}>
-      <li className={`${s.li} ${s.interest}`} onClick={() => handleClick("흥미")}>
-        흥미
-      </li>
       <li className={`${s.li} ${s.capability}`} onClick={() => handleClick("역량")}>
         역량
+      </li>
+      <li className={`${s.li} ${s.interest}`} onClick={() => handleClick("흥미")}>
+        흥미
       </li>
       <li className={`${s.li} ${s.characteristics}`} onClick={() => handleClick("개인특성")}>
         개인특성
