@@ -15,13 +15,7 @@ const InformationPage = () => {
   const router = useRouter();
 
   // 클릭하면 테스트 데이터를 초기화시키고 `test/1`로 이동한다.
-  const startTest = async () => {
-    // 1. 데이터 초기화 및 세션스토리지 저장
-    setLoading(true);
-    const initializeData = await initializeTest();
-    sessionStorage.setItem("bootcamp1", JSON.stringify(initializeData));
-
-    // setLoading(false);
+  const startTest = () => {
     // 2. 테스트 페이지로 이동
     router.push("/test/1");
   };
