@@ -2,7 +2,7 @@ const submitResponses = async (data) => {
   const { page, user_id, responses } = data;
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SUBMIT_RESPONSES_BOOTCAMP}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SUBMIT_RESPONSES_HANLA}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
