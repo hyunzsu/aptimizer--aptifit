@@ -46,10 +46,9 @@ const LoginPage = () => {
     // 회원 확인
     setLoading(true);
     const res = await checkUser();
-    console.log(res);
 
     // 1. 회원정보가 없을 경우
-    if (res.authorization) {
+    if (res.authorization === false) {
       setLoading(false);
       alert("등록되지 않은 사용자입니다!");
       return;
@@ -72,7 +71,7 @@ const LoginPage = () => {
     const data = { phone: phone };
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_LOGIN_BOOTCAMP}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_LOGIN_HANLA}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
