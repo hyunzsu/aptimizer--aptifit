@@ -44,18 +44,27 @@ const LoginPage = () => {
     }
 
     // 회원 확인
-    // setLoading(true);
+    setLoading(true);
     const res = await checkUser();
     console.log(res);
-    // if (res.authorization === false) {
-    //   setLoading(false);
-    //   alert("결과지 데이터가 없습니다!");
-    //   return;
-    // }
-    // setLoading(false);
-    // sessionStorage.setItem("bootcamp10", JSON.stringify(res));
-    // setLoading(true);
-    // router.push("/result");
+
+    // 1. 회원정보가 없을 경우
+    if (res.authorization) {
+      setLoading(false);
+      alert("등록되지 않은 사용자입니다!");
+      return;
+    }
+
+    // 2. 중간에 나온 사용자인 경우
+    if (res.page && res.questions) {
+      sessionStorage.setItem(`bootcamp${res.page}`, JSON.stringify(res));
+      router.push(`test/${res.page}`);
+      return;
+    }
+
+    // 3. 결과지가 있는 경우
+    sessionStorage.setItem("bootcamp10", JSON.stringify(res));
+    router.push("/result");
   };
 
   // 회원정보확인
