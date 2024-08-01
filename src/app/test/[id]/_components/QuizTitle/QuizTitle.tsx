@@ -11,47 +11,14 @@ const QuizTitle = () => {
   const params = useParams();
 
   switch (params.id) {
-    case "1":
-      return (
-        <div className={s.QuizTitle}>
-          <div className={s.titleContainer}>
-            <Image className={s.icon} src={Interest} alt="흥미" width={20} height={20} />
-            <p className={s.category}>흥미</p>
-          </div>
-          <p className={s.title}>Q1. 다음과 같은 내용에 관심과 흥미가 있습니까?</p>
-        </div>
-      );
-
-    case "2":
-      return (
-        <div className={s.QuizTitle}>
-          <div className={s.titleContainer}>
-            <Image className={s.icon} src={Interest} alt="흥미" width={20} height={20} />
-            <p className={s.category}>흥미</p>
-          </div>
-          <p className={s.title}>Q2. 다음과 같은 내용에 관심과 흥미가 있습니까?</p>
-        </div>
-      );
-
-    case "3":
-      return (
-        <div className={s.QuizTitle}>
-          <div className={s.titleContainer}>
-            <Image className={s.icon} src={Capability} alt="역량" width={20} height={20} />
-            <p className={s.category}>역량</p>
-          </div>
-          <p className={s.title}>Q3. 본인이 다음과 같은 능력을 얼마나 갖추고 있다고 생각합니까?</p>
-        </div>
-      );
-
     case "4":
       return (
         <div className={s.QuizTitle}>
           <div className={s.titleContainer}>
-            <Image className={s.icon} src={Value} alt="개인 특성" width={20} height={20} />
-            <p className={s.category}>개인 특성</p>
+            <Image className={s.icon} src={Interest} alt="흥미" width={20} height={20} />
+            <p className={s.category}>흥미</p>
           </div>
-          <p className={s.title}>Q4. 본인이 다음과 같은 특성을 가지고 있다고 생각합니까?</p>
+          <p className={s.title}>Q3. 다음과 같은 내용에 관심과 흥미가 있습니까?</p>
         </div>
       );
 
@@ -59,10 +26,43 @@ const QuizTitle = () => {
       return (
         <div className={s.QuizTitle}>
           <div className={s.titleContainer}>
+            <Image className={s.icon} src={Interest} alt="흥미" width={20} height={20} />
+            <p className={s.category}>흥미</p>
+          </div>
+          <p className={s.title}>Q4. 다음과 같은 내용에 관심과 흥미가 있습니까?</p>
+        </div>
+      );
+
+    case "2":
+      return (
+        <div className={s.QuizTitle}>
+          <div className={s.titleContainer}>
+            <Image className={s.icon} src={Capability} alt="역량" width={20} height={20} />
+            <p className={s.category}>역량</p>
+          </div>
+          <p className={s.title}>Q2. 본인이 다음과 같은 능력을 얼마나 갖추고 있다고 생각합니까?</p>
+        </div>
+      );
+
+    case "1":
+      return (
+        <div className={s.QuizTitle}>
+          <div className={s.titleContainer}>
+            <Image className={s.icon} src={Value} alt="개인 특성" width={20} height={20} />
+            <p className={s.category}>개인 특성</p>
+          </div>
+          <p className={s.title}>Q1. 본인이 다음과 같은 특성을 가지고 있다고 생각합니까?</p>
+        </div>
+      );
+
+    case "3":
+      return (
+        <div className={s.QuizTitle}>
+          <div className={s.titleContainer}>
             <Image className={s.icon} src={Characteristic} alt="가치" width={20} height={20} />
             <p className={s.category}>가치</p>
           </div>
-          <p className={s.title}>Q5. 다음과 같은 가치를 추구하는 것이 중요하다고 생각합니까?</p>
+          <p className={s.title}>Q3. 다음과 같은 가치를 추구하는 것이 중요하다고 생각합니까?</p>
         </div>
       );
 
@@ -74,36 +74,6 @@ const QuizTitle = () => {
             <p className={s.category}>지식</p>
           </div>
           <p className={s.title}>Q6. 다음과 같은 지식의 내용을 알고 있습니까?</p>
-        </div>
-      );
-    case "7":
-      return (
-        <div className={s.QuizTitle}>
-          <div className={s.titleContainer}>
-            <Image className={s.icon} src={Capability} alt="역량" width={20} height={20} />
-            <p className={s.category}>역량</p>
-          </div>
-          <p className={s.title}>Q7. 본인이 다음과 같은 능력을 얼마나 갖추고 있다고 생각합니까?</p>
-        </div>
-      );
-    case "8":
-      return (
-        <div className={s.QuizTitle}>
-          <div className={s.titleContainer}>
-            <Image className={s.icon} src={Characteristic} alt="개인 특성" width={20} height={20} />
-            <p className={s.category}>개인 특성</p>
-          </div>
-          <p className={s.title}>Q8. 본인이 다음과 같은 특성을 가지고 있다고 생각합니까?</p>
-        </div>
-      );
-    case "9":
-      return (
-        <div className={s.QuizTitle}>
-          <div className={s.titleContainer}>
-            <Image className={s.icon} src={Value} alt="가치" width={20} height={20} />
-            <p className={s.category}>가치</p>
-          </div>
-          <p className={s.title}>Q9. 다음과 같은 가치를 추구하는 것이 중요하다고 생각합니까?</p>
         </div>
       );
   }
