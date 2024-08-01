@@ -7,7 +7,7 @@ import s from "./DetailSection.module.css";
 
 const DetailSection = ({ resultData }) => {
   const { result } = resultData;
-  const [nav, setNav] = useState("흥미");
+  const [nav, setNav] = useState("역량");
 
   const renderSection = () => {
     switch (nav) {
@@ -42,6 +42,9 @@ const DetailSection = ({ resultData }) => {
       case "가치":
         return (
           <div className={s.container}>
+            <div className={s.blurScreen}>
+              <div className={s.message}>해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다</div>
+            </div>
             <h3 className={s.subtitle}>가치</h3>
             <div>
               <div className={s.table}>
@@ -70,6 +73,9 @@ const DetailSection = ({ resultData }) => {
       case "개인특성":
         return (
           <div className={s.container}>
+            <div className={s.blurScreen}>
+              <div className={s.message}>해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다</div>
+            </div>
             <h3 className={s.subtitle}>개인특성</h3>
             <div>
               <div className={s.table}>
@@ -97,6 +103,9 @@ const DetailSection = ({ resultData }) => {
       case "흥미":
         return (
           <div className={s.container}>
+            <div className={s.blurScreen}>
+              <div className={s.message}>해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다</div>
+            </div>
             <h3 className={s.subtitle}>흥미</h3>
             <div>
               <div className={s.table}>
@@ -123,6 +132,9 @@ const DetailSection = ({ resultData }) => {
       case "지식":
         return (
           <div className={s.container}>
+            <div className={s.blurScreen}>
+              <div className={s.message}>해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다</div>
+            </div>
             <h3 className={s.subtitle}>지식</h3>
             <div>
               <div className={s.table}>
