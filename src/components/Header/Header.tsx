@@ -9,9 +9,9 @@ const Header = () => {
           <Link href="/">APTIFIT</Link>
         </h1>
         <nav>
-          <ul>
+          <ul className={s.ul}>
             <li>
-              <Link className={s.link} href="/login">
+              <Link className={s.login} href="/login">
                 로그인
               </Link>
             </li>

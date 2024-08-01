@@ -18,7 +18,12 @@
   font-weight: var(--font-900);
 }
 
-.link {
+.ul {
+  display: flex;
+  gap: var(--spacing-24);
+}
+
+.login {
   padding: var(--spacing-8) var(--spacing-16);
   border-radius: 0.4rem;
   font-size: var(--text-16);
@@ -27,7 +32,7 @@
   transition: all 200ms ease-in-out;
 }
 
-.link:hover {
+.login:hover {
   background-color: var(--primary);
   color: var(--white);
 }
