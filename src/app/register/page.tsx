@@ -7,7 +7,6 @@ import s from "./RegisterPage.module.css";
 
 const RegisterPage = () => {
   const [name, setName] = useState("");
-  const [school, setSchool] = useState("");
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -23,7 +22,7 @@ const RegisterPage = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    if (name === "" || school === "" || phone === "") {
+    if (name === "" || phone === "") {
       alert("모든 필드를 채워주세요!");
       return;
     }
@@ -36,7 +35,6 @@ const RegisterPage = () => {
     // 회원가입 후 페이지1 데이터 세션 스토리지에 보관
     setLoading(true);
     const res = await registerUser();
-    console.log(res);
 
     // 이미 등록된 사용자일 때
     if (res.authorization === false) {
@@ -49,7 +47,7 @@ const RegisterPage = () => {
     sessionStorage.setItem("bootcamp1", JSON.stringify(res));
 
     // 유저 프로필 데이터 세션 스토리지에 보관
-    sessionStorage.setItem("user", JSON.stringify({ name, school, phone }));
+    sessionStorage.setItem("user", JSON.stringify({ name, phone }));
 
     // 페이지 이동
     router.push("/information");
@@ -60,14 +58,6 @@ const RegisterPage = () => {
     const input = e.target.value;
     const filteredInput = input.replace(/[0-9a-zA-Z]/g, "");
     setName(filteredInput);
-  };
-
-  // 학교
-  const handleSchoolChange = (e) => {
-    const input = e.target.value;
-
-    const filteredInput = input.replace(/[0-9a-zA-Z]/g, "");
-    setSchool(filteredInput);
   };
 
   // 휴대폰 번호
@@ -82,12 +72,12 @@ const RegisterPage = () => {
   // 회원가입
   const registerUser = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_INITIALIZE_BOOTCAMP}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_INITIALIZE_HANLA}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, school, phone }),
+        body: JSON.stringify({ name, phone }),
       });
 
       // 응답이 성공적인지 확인
@@ -105,28 +95,21 @@ const RegisterPage = () => {
   };
 
   if (loading) {
-    return <Loading text="회원 등록을 진행 중입니다..." />;
+    return <Loading text="사용자 등록을 진행 중입니다..." />;
   }
 
   return (
     <main className={s.RegisterPage}>
       <div className={s.container}>
-        <h2 className={s.title}>회원 등록</h2>
+        <h2 className={s.title}>사용자 등록</h2>
         <form className={s.form} onSubmit={handleFormSubmit}>
           <div className={s.inputContainer}>
             <Input
               label="이름"
               name="name"
               value={name}
-              placeholder="이름을 입력해주세요 (ex: 김스누로)"
+              placeholder="이름을 입력해주세요 (ex: 김예빈)"
               onChange={handleNameChange}
-            />
-            <Input
-              label="학교명"
-              name="school"
-              value={school}
-              placeholder="학교명을 입력해주세요 (ex: 스누로중학교)"
-              onChange={handleSchoolChange}
             />
             <Input
               label="휴대폰"
