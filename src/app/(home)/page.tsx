@@ -8,7 +8,7 @@ const HomePage = () => {
       {/* 1. 제목 */}
       <div className={s.titleContainer}>
         <h1 className={s.title}>앱티핏 대학 전공 적성 검사</h1>
-        <p className={s.subtitle}>너의 전공을 찾아봐</p>
+        <p className={s.subtitle}>HL X 앱티마이저</p>
         <div className={s.buttonContainer}>
           <LinkButton href="/login" label="시작하기" />
         </div>
