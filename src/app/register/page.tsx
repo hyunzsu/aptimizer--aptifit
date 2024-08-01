@@ -35,8 +35,18 @@ const RegisterPage = () => {
 
     // 회원가입 후 페이지1 데이터 세션 스토리지에 보관
     setLoading(true);
-    const register = await registerUser();
-    sessionStorage.setItem("bootcamp1", JSON.stringify(register));
+    const res = await registerUser();
+    console.log(res);
+
+    // 이미 등록된 사용자일 때
+    if (res.authorization === false) {
+      setLoading(false);
+      alert("이미 등록된 사용자입니다!");
+      router.push("/login");
+      return;
+    }
+
+    sessionStorage.setItem("bootcamp1", JSON.stringify(res));
 
     // 유저 프로필 데이터 세션 스토리지에 보관
     sessionStorage.setItem("user", JSON.stringify({ name, school, phone }));
