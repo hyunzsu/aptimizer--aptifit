@@ -45,22 +45,22 @@ const DetailSection = ({ resultData }) => {
             <div className={s.blurScreen}>
               <div className={s.message}>해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다</div>
             </div>
-            <h3 className={s.subtitle}>가치</h3>
+            <h3 className={s.subtitle}>역량</h3>
             <div>
               <div className={s.table}>
                 {/* 그래프 */}
-                <PentagonGraph type={result.value} />
+                <PentagonGraph type={result.strength} />
                 {/* 테이블 */}
-                <Table result={result.value} />
+                <Table result={result.strength} />
                 {/* 모바일 카드 */}
-                {result.value.details.map((item, index) => {
+                {result.strength.details.map((item, index) => {
                   const { field, score, content } = item;
                   return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
                 })}
               </div>
             </div>
             <div>
-              {result.value.descriptions.map((v, i) => {
+              {result.strength.descriptions.map((v, i) => {
                 return (
                   <p key={i} className={s.description}>
                     {v}
@@ -76,21 +76,22 @@ const DetailSection = ({ resultData }) => {
             <div className={s.blurScreen}>
               <div className={s.message}>해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다</div>
             </div>
-            <h3 className={s.subtitle}>개인특성</h3>
+            <h3 className={s.subtitle}>역량</h3>
             <div>
               <div className={s.table}>
                 {/* 그래프 */}
-                <PentagonGraph type={result.characteristic} />
+                <PentagonGraph type={result.strength} />
                 {/* 테이블 */}
-                <Table result={result.characteristic} />
-                {result.characteristic.details.map((item, index) => {
+                <Table result={result.strength} />
+                {/* 모바일 카드 */}
+                {result.strength.details.map((item, index) => {
                   const { field, score, content } = item;
                   return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
                 })}
               </div>
             </div>
             <div>
-              {result.characteristic.descriptions.map((v, i) => {
+              {result.strength.descriptions.map((v, i) => {
                 return (
                   <p key={i} className={s.description}>
                     {v}
@@ -106,20 +107,22 @@ const DetailSection = ({ resultData }) => {
             <div className={s.blurScreen}>
               <div className={s.message}>해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다</div>
             </div>
-            <h3 className={s.subtitle}>흥미</h3>
+            <h3 className={s.subtitle}>역량</h3>
             <div>
               <div className={s.table}>
+                {/* 그래프 */}
+                <PentagonGraph type={result.strength} />
                 {/* 테이블 */}
-                <PentagonGraph type={result.interests} />
-                <Table result={result.interests} />
-                {result.interests.details.map((item, index) => {
+                <Table result={result.strength} />
+                {/* 모바일 카드 */}
+                {result.strength.details.map((item, index) => {
                   const { field, score, content } = item;
                   return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
                 })}
               </div>
             </div>
             <div>
-              {result.interests.descriptions.map((v, i) => {
+              {result.strength.descriptions.map((v, i) => {
                 return (
                   <p key={i} className={s.description}>
                     {v}
@@ -135,21 +138,22 @@ const DetailSection = ({ resultData }) => {
             <div className={s.blurScreen}>
               <div className={s.message}>해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다</div>
             </div>
-            <h3 className={s.subtitle}>지식</h3>
+            <h3 className={s.subtitle}>역량</h3>
             <div>
               <div className={s.table}>
                 {/* 그래프 */}
-                <PentagonGraph type={result.knowledge} />
+                <PentagonGraph type={result.strength} />
                 {/* 테이블 */}
-                <Table result={result.knowledge} />
-                {result.knowledge.details.map((item, index) => {
+                <Table result={result.strength} />
+                {/* 모바일 카드 */}
+                {result.strength.details.map((item, index) => {
                   const { field, score, content } = item;
                   return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
                 })}
               </div>
             </div>
             <div>
-              {result.knowledge.descriptions.map((v, i) => {
+              {result.strength.descriptions.map((v, i) => {
                 return (
                   <p key={i} className={s.description}>
                     {v}
