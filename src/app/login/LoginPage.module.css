@@ -27,6 +27,7 @@
 .link {
   color: blue;
   font-size: var(--text-16);
+  width: fit-content;
 }
 
 .buttonContainer {
