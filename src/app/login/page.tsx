@@ -62,7 +62,7 @@ const LoginPage = () => {
     }
 
     // 3. 결과지가 있는 경우
-    sessionStorage.setItem("bootcamp10", JSON.stringify(res));
+    sessionStorage.setItem("bootcamp7", JSON.stringify(res));
     router.push("/result");
   };
 
