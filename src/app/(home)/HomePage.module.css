@@ -21,7 +21,7 @@
 .title {
   font-size: var(--text-40);
   font-weight: var(--font-700);
-  margin-bottom: var(--spacing-16);
+  margin-bottom: var(--spacing-24);
 }
 
 .subtitle {
@@ -40,7 +40,7 @@
 @media (max-width: 425px) {
   .title {
     font-size: var(--text-28);
-    margin-bottom: var(--spacing-8);
+    margin-bottom: var(--spacing-16);
   }
 
   .subtitle {
