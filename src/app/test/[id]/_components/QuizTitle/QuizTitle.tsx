@@ -18,7 +18,7 @@ const QuizTitle = () => {
             <Image className={s.icon} src={Interest} alt="흥미" width={20} height={20} />
             <p className={s.category}>흥미</p>
           </div>
-          <p className={s.title}>Q3. 다음과 같은 내용에 관심과 흥미가 있습니까?</p>
+          <p className={s.title}>Q4. 다음과 같은 내용에 관심과 흥미가 있습니까?</p>
         </div>
       );
 
@@ -29,7 +29,7 @@ const QuizTitle = () => {
             <Image className={s.icon} src={Interest} alt="흥미" width={20} height={20} />
             <p className={s.category}>흥미</p>
           </div>
-          <p className={s.title}>Q4. 다음과 같은 내용에 관심과 흥미가 있습니까?</p>
+          <p className={s.title}>Q5. 다음과 같은 내용에 관심과 흥미가 있습니까?</p>
         </div>
       );
 
