@@ -8,7 +8,7 @@ const Header = () => {
         <h1 className={s.logo}>
           <Link href="/">APTIFIT</Link>
         </h1>
-        <nav>
+        {/* <nav>
           <ul className={s.ul}>
             <li>
               <Link className={s.login} href="/login">
@@ -16,7 +16,7 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
       </div>
     </header>
   );
