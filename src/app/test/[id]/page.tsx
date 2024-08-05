@@ -89,9 +89,9 @@ const TestPage = () => {
         </div>
 
         {/* 2. 진행바 */}
-        <div className={s.progressBarContainer}>
+        {/* <div className={s.progressBarContainer}>
           <ProgressBar responses={responses} />
-        </div>
+        </div> */}
 
         {/* 3. 퀴즈 */}
         <div className={s.quizContainer}>
