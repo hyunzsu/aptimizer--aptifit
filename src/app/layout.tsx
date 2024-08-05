@@ -11,7 +11,7 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "앱티마이저 | 스누로",
+  title: "앱티마이저 | 앱티핏 한라 체험판",
   icons: {
     icon: "/favicon.svg",
   },
