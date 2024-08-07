@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 import { useRouter } from "next/navigation";
-import { DetailSection, MajorSection, SummarySection, KeywordSection } from "./_sections";
+import { DetailSection, MajorSection, SummarySection, KeywordSection, PrintPage } from "./_sections";
 import { ResultLoading } from "./_components";
 import { submitResponses } from "@/function";
 import { LayoutContainer, Button } from "@/components";
@@ -12,6 +13,7 @@ const ResultPage = () => {
   const [resultData, setResultData] = useState({});
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const pageRef = useRef(null);
 
   useEffect(() => {
     const savedData = sessionStorage.getItem("bootcamp6");
@@ -41,10 +43,14 @@ const ResultPage = () => {
     }
   }, []);
 
-  const handleClick = () => {
-    sessionStorage.clear();
-    router.push("/");
-  };
+  const handleClick = useReactToPrint({
+    content: () => pageRef.current,
+  });
+
+  // const handleClick = () => {
+  //   sessionStorage.clear();
+  //   router.push("/");
+  // };
 
   if (loading) {
     return <ResultLoading />;
@@ -70,6 +76,7 @@ const ResultPage = () => {
             완료
           </Button>
         </div>
+        <PrintPage resultData={resultData} pageRef={pageRef} />
       </main>
     );
   }

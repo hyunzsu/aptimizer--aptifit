@@ -35,3 +35,14 @@
   display: flex;
   justify-content: center;
 }
+
+/* @page {
+  size: A4 landscape;
+  margin: 20mm;
+}
+
+@media print {
+  .PrintPage {
+    display: flex;
+  }
+} */
