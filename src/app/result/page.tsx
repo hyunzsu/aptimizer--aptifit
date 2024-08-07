@@ -1,10 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import { useRouter } from "next/navigation";
-import { DetailSection, MajorSection, SummarySection, KeywordSection, PrintPage } from "./_sections";
-import { ResultLoading } from "./_components";
+import Printer from "../../../public/svg/printer.svg";
+import {
+  DetailSection,
+  MajorSection,
+  SummarySection,
+  KeywordSection,
+} from "./_sections";
+import { ResultLoading, Print } from "./_components";
 import { submitResponses } from "@/function";
 import { LayoutContainer, Button } from "@/components";
 import s from "./ResultPage.module.css";
@@ -43,14 +50,14 @@ const ResultPage = () => {
     }
   }, []);
 
-  const handleClick = useReactToPrint({
+  const printResultPage = useReactToPrint({
     content: () => pageRef.current,
   });
 
-  // const handleClick = () => {
-  //   sessionStorage.clear();
-  //   router.push("/");
-  // };
+  const handleClick = () => {
+    sessionStorage.clear();
+    router.push("/");
+  };
 
   if (loading) {
     return <ResultLoading />;
@@ -58,7 +65,7 @@ const ResultPage = () => {
 
   if (!loading && Object.keys(resultData).length !== 0) {
     return (
-      <main className={s.ResultPage}>
+      <main className={s.ResultPage} ref={pageRef}>
         <LayoutContainer>
           <h1 className={s.title}>🤖 앱티핏 적성 검사</h1>
           <p className={s.warning}>*결과지는 1순위만 제공됩니다</p>
@@ -70,13 +77,15 @@ const ResultPage = () => {
           <KeywordSection resultData={resultData} />
           {/* 4. 세부 분석 섹션 */}
           <DetailSection resultData={resultData} />
+          <button className={s.print} onClick={printResultPage}>
+            <Image src={Printer} alt="" width={24} height={24} />
+          </button>
         </LayoutContainer>
         <div className={s.buttonContainer}>
           <Button type="button" onClick={handleClick}>
             완료
           </Button>
         </div>
-        <PrintPage resultData={resultData} pageRef={pageRef} />
       </main>
     );
   }
