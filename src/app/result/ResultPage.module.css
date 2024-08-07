@@ -19,6 +19,16 @@
   margin-bottom: 64px;
 }
 
+.print {
+  background-color: var(--secondary);
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 @media (max-width: 425px) {
   .title {
     font-size: 28px;
@@ -29,6 +39,10 @@
     font-size: 14px;
     margin-bottom: 40px;
   }
+
+  .print {
+    display: none;
+  }
 }
 
 .buttonContainer {
@@ -36,13 +50,40 @@
   justify-content: center;
 }
 
-/* @page {
-  size: A4 landscape;
+/* print */
+
+@page {
+  size: A4;
   margin: 20mm;
 }
 
 @media print {
-  .PrintPage {
-    display: flex;
+  .ResultPage {
+    padding: 0;
   }
-} */
+
+  .titleContainer {
+    margin-bottom: 24px;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .warning {
+    font-size: 12px;
+    font-weight: 500;
+    color: blue;
+    margin-bottom: 24px;
+  }
+
+  .buttonContainer {
+    display: none;
+  }
+
+  .print {
+    display: none;
+  }
+}

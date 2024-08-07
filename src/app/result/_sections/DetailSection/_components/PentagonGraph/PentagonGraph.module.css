@@ -3,6 +3,12 @@
   height: 400px;
 }
 
+@media print {
+  .PentagonGraph {
+    display: none;
+  }
+}
+
 @media (max-width: 425px) {
   .PentagonGraph {
     width: 250px;

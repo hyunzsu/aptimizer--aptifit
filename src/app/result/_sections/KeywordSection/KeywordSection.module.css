@@ -51,6 +51,58 @@
   font-weight: var(--font-700);
 }
 
+.printContainer {
+  display: none;
+}
+
+/* 프린트 */
+@media print {
+  .KeywordSection {
+    padding: 0;
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .container {
+    display: none;
+  }
+
+  .printContainer {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid black;
+    border-bottom: none;
+  }
+
+  .printContainer:last-child {
+    border-bottom: 1px solid black;
+  }
+
+  .printImgContainer {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-weight: 700;
+    padding: 8px;
+    min-width: 100px;
+    background-color: var(--secondary);
+    border-right: 1px solid black;
+  }
+
+  .printDescContainer {
+    font-size: 12px;
+    line-height: 150%;
+    padding: 8px;
+    text-align: left;
+  }
+}
+
 @media (max-width: 425px) {
   .title {
     margin-bottom: 40px;

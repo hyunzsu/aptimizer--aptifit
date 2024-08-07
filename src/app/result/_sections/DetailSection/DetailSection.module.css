@@ -97,6 +97,36 @@
   color: white;
 }
 
+.printContainer {
+  display: none;
+}
+
+@media print {
+  .DetailSection {
+    padding: 0;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .detailSectionContainer {
+    display: none;
+  }
+
+  .printContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .printDescription {
+    font-size: 12px;
+    line-height: 150%;
+  }
+}
+
 @media (max-width: 425px) {
   .container {
     padding: var(--spacing-16) var(--spacing-16);

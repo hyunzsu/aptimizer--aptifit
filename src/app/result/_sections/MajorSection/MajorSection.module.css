@@ -44,6 +44,40 @@
   display: none;
 }
 
+/* 프린트 */
+@media print {
+  .MajorSection {
+    margin-bottom: 64px;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .imageContainer {
+    margin-bottom: 40px;
+  }
+
+  .description {
+    font-size: 12px;
+    line-height: 150%;
+    margin-bottom: 40px;
+  }
+
+  .majorsContainer {
+    gap: 24px;
+    margin-bottom: 0;
+  }
+
+  .major {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 16px;
+    border-radius: 0.8rem;
+  }
+}
+
 /* 반응형 */
 
 @media (max-width: 425px) {

@@ -24,7 +24,14 @@ const DetailSection = ({ resultData }) => {
                 {/* 모바일 카드 */}
                 {result.strength.details.map((item, index) => {
                   const { field, score, content } = item;
-                  return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
+                  return (
+                    <Card
+                      key={`${index}-${field}`}
+                      field={field}
+                      score={score}
+                      content={content}
+                    />
+                  );
                 })}
               </div>
             </div>
@@ -43,7 +50,9 @@ const DetailSection = ({ resultData }) => {
         return (
           <div className={s.container}>
             <div className={s.blurScreen}>
-              <div className={s.message}>해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다</div>
+              <div className={s.message}>
+                해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다
+              </div>
             </div>
             <h3 className={s.subtitle}>역량</h3>
             <div>
@@ -55,7 +64,14 @@ const DetailSection = ({ resultData }) => {
                 {/* 모바일 카드 */}
                 {result.strength.details.map((item, index) => {
                   const { field, score, content } = item;
-                  return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
+                  return (
+                    <Card
+                      key={`${index}-${field}`}
+                      field={field}
+                      score={score}
+                      content={content}
+                    />
+                  );
                 })}
               </div>
             </div>
@@ -74,7 +90,9 @@ const DetailSection = ({ resultData }) => {
         return (
           <div className={s.container}>
             <div className={s.blurScreen}>
-              <div className={s.message}>해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다</div>
+              <div className={s.message}>
+                해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다
+              </div>
             </div>
             <h3 className={s.subtitle}>역량</h3>
             <div>
@@ -86,7 +104,14 @@ const DetailSection = ({ resultData }) => {
                 {/* 모바일 카드 */}
                 {result.strength.details.map((item, index) => {
                   const { field, score, content } = item;
-                  return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
+                  return (
+                    <Card
+                      key={`${index}-${field}`}
+                      field={field}
+                      score={score}
+                      content={content}
+                    />
+                  );
                 })}
               </div>
             </div>
@@ -105,7 +130,9 @@ const DetailSection = ({ resultData }) => {
         return (
           <div className={s.container}>
             <div className={s.blurScreen}>
-              <div className={s.message}>해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다</div>
+              <div className={s.message}>
+                해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다
+              </div>
             </div>
             <h3 className={s.subtitle}>역량</h3>
             <div>
@@ -117,7 +144,14 @@ const DetailSection = ({ resultData }) => {
                 {/* 모바일 카드 */}
                 {result.strength.details.map((item, index) => {
                   const { field, score, content } = item;
-                  return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
+                  return (
+                    <Card
+                      key={`${index}-${field}`}
+                      field={field}
+                      score={score}
+                      content={content}
+                    />
+                  );
                 })}
               </div>
             </div>
@@ -136,7 +170,9 @@ const DetailSection = ({ resultData }) => {
         return (
           <div className={s.container}>
             <div className={s.blurScreen}>
-              <div className={s.message}>해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다</div>
+              <div className={s.message}>
+                해당 내용은 에듀 프리미엄에서 확인해볼 수 있습니다
+              </div>
             </div>
             <h3 className={s.subtitle}>역량</h3>
             <div>
@@ -148,7 +184,14 @@ const DetailSection = ({ resultData }) => {
                 {/* 모바일 카드 */}
                 {result.strength.details.map((item, index) => {
                   const { field, score, content } = item;
-                  return <Card key={`${index}-${field}`} field={field} score={score} content={content} />;
+                  return (
+                    <Card
+                      key={`${index}-${field}`}
+                      field={field}
+                      score={score}
+                      content={content}
+                    />
+                  );
                 })}
               </div>
             </div>
@@ -169,10 +212,20 @@ const DetailSection = ({ resultData }) => {
   return (
     <section className={s.DetailSection}>
       <h2 className={s.title}>세부 결과 분석</h2>
-      <div>
-        {/* 네비게이션 */}
+      <div className={s.detailSectionContainer}>
         <DetailNavigation setNav={setNav} />
         {renderSection()}
+      </div>
+      {/* 프린트 */}
+      <div className={s.printContainer}>
+        <Table result={result.strength} />
+        {result.strength.descriptions.map((v, i) => {
+          return (
+            <p key={i} className={s.printDescription}>
+              {v}
+            </p>
+          );
+        })}
       </div>
     </section>
   );
