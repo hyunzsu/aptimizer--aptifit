@@ -1,5 +1,5 @@
 // 로그인: 회원 정보 확인하는 함수
-export const checkUser = async (phone) => {
+export const checkUser = async (phone: string) => {
   const data = { phone };
 
   try {
