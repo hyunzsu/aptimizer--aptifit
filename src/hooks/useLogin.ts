@@ -10,6 +10,7 @@ const useLogin = () => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
+  // 휴대폰 번호
   const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value;
     // 휴대폰 번호 형식 필터링 (숫자와 하이픈만 허용)
